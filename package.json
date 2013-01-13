@@ -1,32 +1,33 @@
 {
-    "name":"yap",
-    "version":"1.0.0",
-    "description":"Yet Another Presentation",
-    "main":"grunt.js",
-    "directories":{
-        "test":"test"
-    },
-    "scripts":{
-        "test":"grunt jasmine"
-    },
-    "repository":{
-        "type":"git",
-        "url":"https://github.com/pads/yap.git"
-    },
-    "keywords":[
-        "presentation",
-        "slides"
-    ],
-    "author":"Ben Paddock",
-    "license":"BSD",
-    "devDependencies":{
-        "grunt":"~0.4.0"
-    },
-    "jam":{
-        "baseUrl":"lib",
-        "packageDir":"lib/vendor",
-        "dependencies":{
-            "backbone":"0.9.9"
-        }
+  "name": "yap",
+  "version": "1.0.0",
+  "description": "Yet Another Presentation",
+  "main": "grunt.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pads/yap.git"
+  },
+  "keywords": [
+    "presentation",
+    "slides"
+  ],
+  "author": "Ben Paddock",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "jamjs": "~0.2.13"
+  },
+  "jam": {
+    "baseUrl": "src/js",
+    "packageDir": "lib",
+    "dependencies": {
+      "backbone": "0.9.9"
     }
+  }
 }
