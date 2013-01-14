@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Jasmine Spec Runner</title>
+
+        <% css.forEach(function(style){ %>
+        <link rel="stylesheet" href="<%= style %>">
+        <% }) %>
+
+        <% scripts.forEach(function(script){ %>
+        <% if (script.indexOf("jasmine-helper.js") === -1 ) { %>
+        <script src="<%= script %>"></script>
+        <% } %>
+        <% }) %>
+        <!-- Workaround for broken spec runner that does not wait for AMD specs to load -->
+        <script>
+            /*global jasmine:false*/
+
+            var jasmineEnv = jasmine.getEnv();
+
+            jasmineEnv.updateInterval = 1000;
+            var htmlReporter = new jasmine.HtmlReporter();
+            jasmineEnv.addReporter(htmlReporter);
+
+            jasmineEnv.specFilter = function(spec) {
+                return htmlReporter.specFilter(spec);
+            };
+
+            var currentWindowOnload = window.onload;
+
+            window.onload = function() {
+                if (currentWindowOnload) {
+                    currentWindowOnload();
+                }
+                execJasmine();
+            };
+
+            function execJasmine() {
+                setTimeout(function() {
+                    jasmineEnv.execute();
+                }, 250);
+            }
+        </script>
+
+        <% if (typeof specs !== "undefined") { %>
+        <script>
+            require([
+                    <% specs.forEach(function(script, i){ %>
+                "<%= script %>" <% if (i !== specs.length-1) { %>,<% } %>
+                <% }) %>
+            ]);
+        </script>
+        <% } %>
+    </head>
+    <body>
+    </body>
+</html>
