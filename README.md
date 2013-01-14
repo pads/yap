@@ -12,7 +12,6 @@ Requirements
 
 * [Node](http://nodejs.org)
 * Grunt: `npm install -g grunt-cli grunt-init`
-* Jam: `npm install -g jamjs`
 
 Usage
 =====
