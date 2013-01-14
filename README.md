@@ -11,7 +11,7 @@ Requirements
 ============
 
 * [Node](http://nodejs.org)
-* Grunt: `npm install -g grunt-cli grunt-init`
+* Grunt: `npm install -g grunt`
 
 Usage
 =====
