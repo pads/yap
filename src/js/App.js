@@ -17,7 +17,7 @@ define(
 
         function App() {
             this.initialise = function () {
-                new AppRouter();
+                new AppRouter().home();
                 Backbone.history.start();
             };
         }
