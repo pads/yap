@@ -1,4 +1,4 @@
-define(["/src/js/App.js"], function (App) {
+require(["/src/js/App.js"], function (App) {
 
     var app;
 
