@@ -1,9 +1,10 @@
-module.exports = function(grunt) {
+/*global module: true */
+module.exports = function (grunt) {
 
     grunt.initConfig({
-        jasmine : {
+        jasmine: {
             amd: true,
-            specs : "test/*Spec.js",
+            specs: "test/*Spec.js",
             template: "test/CustomRunner.tmpl",
             helpers: [
                 "src/js/lib/require.js",
@@ -12,11 +13,41 @@ module.exports = function(grunt) {
             junit: {
                 output: "junit/"
             }
+        },
+        lint: {
+            files: ["grunt.js", "src/js/**/!(backbone|jquery|require|underscore).js"]
+        },
+        jshint: {
+            options: {
+                bitwise: true,
+                camelcase: true,
+                curly: true,
+                eqeqeq: true,
+                forin: true,
+                immed: true,
+                indent: 4,
+                latedef: true,
+                newcap: true,
+                noarg: true,
+                noempty: true,
+                quotmark: "double",
+                trailing: true,
+                maxlen: 120,
+                undef: true,
+                unused: true,
+                boss: true,
+                browser: true,
+                sub: true
+            },
+            globals: {
+                define: true,
+                require: true
+            }
         }
     });
 
     grunt.loadNpmTasks("grunt-volo");
     grunt.loadNpmTasks("grunt-jasmine-runner");
 
-    grunt.registerTask("default", "jasmine");
+    grunt.registerTask("default", "lint jasmine");
 };

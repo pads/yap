@@ -12,10 +12,10 @@ define(
         "backbone",
         "AppRouter"
     ],
-    function(Backbone, AppRouter) {
+    function (Backbone, AppRouter) {
 
         function App() {
-            this.initialise = function() {
+            this.initialise = function () {
                 new AppRouter();
                 Backbone.history.start();
             };
