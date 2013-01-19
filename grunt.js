@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             }
         },
         lint: {
-            files: ["grunt.js", "src/js/**/!(backbone|jquery|require|underscore).js"]
+            files: ["grunt.js", "src/js/**/!(backbone|jquery|require|underscore).js", "test/*.js"]
         },
         jshint: {
             options: {
@@ -41,8 +41,16 @@ module.exports = function (grunt) {
             },
             globals: {
                 define: true,
-                require: true
+                require: true,
+                describe: true,
+                beforeEach: true,
+                it: true,
+                expect: true
             }
+        },
+        watch: {
+            files: ["<config:lint.files>"],
+            tasks: ["lint", "jasmine"]
         }
     });
 

@@ -1,14 +1,14 @@
-define(["/src/js/App.js"], function(App) {
+define(["/src/js/App.js"], function (App) {
 
     var app;
 
-    beforeEach(function() {
+    beforeEach(function () {
         app = new App();
     });
 
-    describe("YAP application", function() {
+    describe("YAP application", function () {
 
-        it("should be defined", function() {
+        it("should be defined", function () {
             expect(app).not.toBeUndefined();
         });
     });
