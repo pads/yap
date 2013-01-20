@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             }
         },
         lint: {
-            files: ["grunt.js", "src/js/**/!(backbone|jquery|require|text|underscore).js", "test/*.js"]
+            files: ["grunt.js", "src/js/**/!(*ackbone*|jquery|require|text|underscore).js", "test/*.js"]
         },
         jshint: {
             options: {

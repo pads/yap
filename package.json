@@ -30,7 +30,8 @@
       "underscore": "github:amdjs/underscore/1.4.3",
       "backbone": "github:amdjs/backbone/0.9.10",
       "require": "github:jrburke/requirejs/2.1.2",
-      "text": "github:requirejs/text/2.0.3"
+      "text": "github:requirejs/text/2.0.3",
+      "Backbone.localStorage": "github:jeromegn/Backbone.localStorage/master"
     }
   }
 }
