@@ -4,10 +4,10 @@
 <article>
     <ul>
         <% _.each(slides, function(slide) { %>
-        <li class="slide">
-            <span><%= slide.title %></span>
-            <button id="removeslide" class="button">Remove slide</button>
+        <li id="<%= slide.id %>" class="slide">
+            <span><%= slide.attributes.title %></span>
             <button id="editslide" class="button">Edit slide</button>
+            <button id="removeslide" class="button">Remove slide</button>
         </li>
         <% }); %>
     </ul>
