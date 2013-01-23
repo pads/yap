@@ -1,4 +1,4 @@
-define(["backbone"], function (Backbone) {
+define(["backbone", "backboneLocalStorage"], function (Backbone, LocalStorage) {
 
     return Backbone.Model.extend({
         defaults: {
@@ -11,6 +11,7 @@ define(["backbone"], function (Backbone) {
             previous: {
                 title: ""
             }
-        }
+        },
+        localStorage: new LocalStorage("SlideModel")
     });
 });

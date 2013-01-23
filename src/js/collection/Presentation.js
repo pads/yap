@@ -1,6 +1,7 @@
-define(["backbone", "model/Slide"], function (Backbone, Slide) {
+define(["backbone", "model/Slide", "backboneLocalStorage"], function (Backbone, Slide, LocalStorage) {
 
     return Backbone.Collection.extend({
-        model: Slide
+        model: Slide,
+        localStorage: new LocalStorage("PresentationCollection")
     });
 });
