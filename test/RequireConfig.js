@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: "/src/js",
+    baseUrl: "/src/js/",
     paths: {
         text: "lib/text",
         jquery: "lib/jquery",
