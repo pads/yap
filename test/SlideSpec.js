@@ -13,7 +13,7 @@ define(["/src/js/model/Slide.js"], function (Slide) {
         });
 
         it("should have the correct default title placeholder", function () {
-            expect(slide.get("title-placeholder")).toBe("Enter title here");
+            expect(slide.get("titleplaceholder")).toBe("Enter title here");
         });
 
         it("should have the correct default contents", function () {
