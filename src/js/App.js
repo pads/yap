@@ -4,7 +4,8 @@ require.config({
         text: "lib/text",
         jquery: "lib/jquery",
         underscore: "lib/underscore",
-        backbone: "lib/backbone"
+        backbone: "lib/backbone",
+        backboneLocalStorage: "lib/Backbone.localStorage"
     }
 });
 
@@ -17,8 +18,9 @@ define(
 
         function App() {
             this.initialise = function () {
-                new AppRouter().home();
                 Backbone.history.start();
+                var appRouter = new AppRouter();
+                appRouter.navigate("home", { trigger: true });
             };
         }
         new App().initialise();
