@@ -6,7 +6,8 @@ define(["backbone", "underscore", "text!/src/html/templates/slide.html"], functi
         template: _.template(slideTemplate),
         events: {
             "click .next": "next",
-            "click .previous": "previous"
+            "click .previous": "previous",
+            "click #saveslide": "save"
         },
         initialize: function () {
 
@@ -19,6 +20,9 @@ define(["backbone", "underscore", "text!/src/html/templates/slide.html"], functi
 
         },
         previous: function () {
+
+        },
+        save: function () {
 
         }
     });
