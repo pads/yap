@@ -1,7 +1,7 @@
 <header>
-    <h3>Presentation Slides</h3>
+    <h1>Presentation Slides</h1>
 </header>
-<article>
+<section>
     <ul>
         <% _.each(slides, function(slide) { %>
         <li id="<%= slide.id %>" class="slide">
@@ -11,10 +11,10 @@
         </li>
         <% }); %>
     </ul>
-</article>
+</section>
 <hr>
 <footer>
-    <nav>
+    <menu>
         <button id="addslide" class="button">Add slide</button>
-    </nav>
+    </menu>
 </footer>

@@ -1,7 +1,7 @@
 define(["backbone", "underscore", "text!/src/html/templates/home.html"], function (Backbone, _, homeTemplate) {
 
     return Backbone.View.extend({
-        id: "home",
+        className: "home",
         tagName: "section",
         template: _.template(homeTemplate),
         render: function () {

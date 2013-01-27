@@ -18,13 +18,13 @@ define([
             "editslide/:id": "editSlide"
         },
         home: function () {
-            $("#container").html(new HomeView().render().el);
+            $(".container").html(new HomeView().render().el);
         },
         editPresentation: function () {
             var presentationView = new PresentationView({ collection: presentation});
             presentation.fetch({
                 success: function () {
-                    $("#container").html(presentationView.render().el);
+                    $(".container").html(presentationView.render().el);
                 }
             });
         },
@@ -35,7 +35,7 @@ define([
             var slide = presentation.find(function (model) {
                 return model.get("id") === id;
             });
-            $("#container").html(new SlideView({ model: slide }).render().el);
+            $(".container").html(new SlideView({ model: slide }).render().el);
         }
     });
 

@@ -7,7 +7,7 @@ define([
     function (Backbone, _, $, slideTemplate) {
 
     return Backbone.View.extend({
-        id: "slide",
+        className: "slide",
         tagName: "section",
         template: _.template(slideTemplate),
         events: {
