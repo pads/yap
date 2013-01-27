@@ -18,9 +18,8 @@ define(
 
         function App() {
             this.initialise = function () {
+                new AppRouter();
                 Backbone.history.start();
-                var appRouter = new AppRouter();
-                appRouter.navigate("home", { trigger: true });
             };
         }
         new App().initialise();
