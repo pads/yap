@@ -5,8 +5,9 @@ define([
     "collection/Presentation",
     "view/PresentationView",
     "model/Slide",
-    "view/SlideView"
-], function (Backbone, $, HomeView, Presentation, PresentationView, Slide, SlideView) {
+    "view/SlideView",
+    "view/SlideShowView"
+], function (Backbone, $, HomeView, Presentation, PresentationView, Slide, SlideView, SlideShowView) {
 
     var presentation = new Presentation();
 
@@ -29,7 +30,12 @@ define([
             });
         },
         viewPresentation: function () {
-
+            var slideShowView = new SlideShowView({ collection: presentation});
+            presentation.fetch({
+                success: function () {
+                    $(".container").html(slideShowView.render().el);
+                }
+            });
         },
         editSlide: function (id) {
             var slide = presentation.find(function (model) {

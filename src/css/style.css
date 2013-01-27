@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana;
+    font-family: Verdana, Arial, sans-serif;
     font-size: 62.5%;
     width: 50%;
     margin: auto;
@@ -27,6 +27,10 @@ nav li {
 menu {
     padding: 0.5em;
     margin: 0;
+}
+
+.slideshow menu {
+    text-align: center;
 }
 
 button {
