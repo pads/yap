@@ -8,6 +8,8 @@ define([
     "view/SlideView"
 ], function (Backbone, $, HomeView, Presentation, PresentationView, Slide, SlideView) {
 
+    var presentation = new Presentation();
+
     return Backbone.Router.extend({
         routes: {
             "home": "home",
@@ -18,7 +20,6 @@ define([
             $("#container").html(new HomeView().render().el);
         },
         loadPresentation: function () {
-            var presentation = new Presentation();
             var presentationView = new PresentationView({ collection: presentation});
             presentation.fetch({
                 success: function () {
@@ -27,12 +28,10 @@ define([
             });
         },
         editSlide: function (id) {
-            var slide = new Slide({ id: id});
-            slide.fetch({
-                success: function () {
-                    $("#container").html(new SlideView({ model: slide }).render().el);
-                }
+            var slide = presentation.find(function (model) {
+                return model.get("id") === id;
             });
+            $("#container").html(new SlideView({ model: slide }).render().el);
         }
     });
 
