@@ -21,7 +21,8 @@
   "license": "BSD",
   "devDependencies": {
     "grunt-volo": "0.0.2",
-    "grunt-jasmine-runner": "0.6.0"
+    "grunt-jasmine-runner": "0.6.0",
+    "grunt-css": "0.3.x"
   },
   "volo": {
     "baseDir": "src/js/lib",

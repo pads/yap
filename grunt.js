@@ -17,6 +17,11 @@ module.exports = function (grunt) {
         lint: {
             files: ["grunt.js", "src/js/**/!(*ackbone*|jquery|require|text|underscore).js", "test/*.js"]
         },
+        csslint: {
+            lint: {
+                src: "src/css/*.css"
+            }
+        },
         jshint: {
             options: {
                 bitwise: true,
@@ -49,13 +54,14 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: ["<config:lint.files>"],
-            tasks: ["lint", "jasmine"]
+            files: ["<config:csslint.lint.src>", "<config:lint.files>"],
+            tasks: ["csslint", "lint", "jasmine"]
         }
     });
 
     grunt.loadNpmTasks("grunt-volo");
     grunt.loadNpmTasks("grunt-jasmine-runner");
+    grunt.loadNpmTasks("grunt-css");
 
     grunt.registerTask("default", "lint jasmine");
 };
