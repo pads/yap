@@ -33,13 +33,17 @@ menu {
     text-align: center;
 }
 
+.slideshow section {
+    padding: 1em;
+    min-height: 16em;
+}
+
 button {
     background-color: white;
     cursor: pointer;
 }
 
 .button {
-    font-size: 1.6em;
     color: #2f4f4f;
     font-weight: bold;
     text-decoration: none;
@@ -66,7 +70,7 @@ h4 {
     padding: 1em;
 }
 
-.home, .presentation span {
+.home, .presentation span, .slideshow section, .button {
     font-size: 1.6em;
 }
 
@@ -92,4 +96,56 @@ h4 {
 .message {
     float: right;
     font-weight: bold;
+}
+
+:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+}
+
+:-webkit-full-screen header {
+    padding-top: 0.1em;
+}
+
+:-webkit-full-screen footer {
+    position: fixed;
+    bottom: -5em;
+    left: 0;
+    right: 0;
+}
+
+:-moz-full-screen {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+}
+
+:-moz-full-screen header {
+    padding-top: 0.1em;
+}
+
+:-moz-full-screen footer {
+    position: fixed;
+    bottom: -5em;
+    left: 0;
+    right: 0;
+}
+
+:fullscreen {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+}
+
+:fullscreen header {
+    padding-top: 0.1em;
+}
+
+:fullscreen footer {
+    position: fixed;
+    bottom: -5em;
+    left: 0;
+    right: 0;
 }
