@@ -33,7 +33,8 @@ define([
             var content = $("#content").val();
             this.model.save({ title: title, content: content}, {
                 success: function () {
-
+                    $(".message").css("color", "green");
+                    $(".message").text("Slide saved");
                 }
             });
         }

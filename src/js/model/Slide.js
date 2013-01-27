@@ -2,9 +2,10 @@ define(["backbone"], function (Backbone) {
 
     return Backbone.Model.extend({
         defaults: {
-            title: "New slide",
+            title: "",
             titleplaceholder: "Enter title here",
-            content: "Enter content here",
+            content: "",
+            contentplaceholder: "Enter content here",
             next: {
                 title: ""
             },

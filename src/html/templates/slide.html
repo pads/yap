@@ -1,11 +1,13 @@
 <header>
     <input id="title" placeholder="<%= titleplaceholder %>" value="<%= title %>"/>
+    <output class="message"></output>
 </header>
-<article>
-    <textarea id="content" placeholder="<%= content %>"/>
-</article>
+<section>
+    <textarea id="content" placeholder="<%= contentplaceholder %>"><%= content %></textarea>
+</section>
 <footer>
-    <nav>
+    <menu>
         <button class="button" id="saveslide">Save</button>
-    </nav>
+        <a href="#editpresentation" class="button" id="back">Back</a>
+    </menu>
 </footer>

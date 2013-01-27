@@ -22,9 +22,14 @@ header h2 {
 nav li {
     display: inline;
 }
+menu {
+    padding: 0.5em;
+    margin: 0;
+}
 
 button {
     background-color: white;
+    cursor: pointer;
 }
 
 .button {
@@ -60,8 +65,11 @@ footer h4 {
 }
 
 #slide input {
-    padding: 0.5em;
     min-width: 18em;
+}
+
+#slide input, .message {
+    padding: 0.5em;
     font-size: 1.4em;
     margin-bottom: 0.5em;
 }
@@ -73,4 +81,9 @@ footer h4 {
     min-height: 10em;
     margin-bottom: 0.5em;
     resize: none;
+}
+
+.message {
+    float: right;
+    font-weight: bold;
 }
