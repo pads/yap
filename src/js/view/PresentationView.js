@@ -2,9 +2,8 @@ define([
     "backbone",
     "underscore",
     "jquery",
-    "text!/src/html/templates/presentation.html",
-    "model/Slide"
-], function (Backbone, _, $, presentationTemplate, Slide) {
+    "text!/src/html/templates/presentation.html"
+], function (Backbone, _, $, presentationTemplate) {
 
     return Backbone.View.extend({
         id: "presentation",
@@ -27,9 +26,17 @@ define([
             window.location.href = "#editslide/" + $(event.currentTarget).parent().attr("id");
         },
         removeSlide: function (event) {
+            var view = this;
             var slideId = $(event.currentTarget).parent().attr("id");
-            this.collection.remove(slideId);
-            this.render();
+            var slide = this.collection.find(function (model) {
+                return model.get("id") === slideId;
+            });
+            slide.destroy({
+                success: function () {
+                    view.collection.remove(slideId);
+                    view.render();
+                }
+            });
         }
     });
 });
