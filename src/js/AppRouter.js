@@ -11,14 +11,20 @@ define([
     return Backbone.Router.extend({
         routes: {
             "home": "home",
-            "newpresentation": "newPresentation",
+            "loadpresentation": "loadPresentation",
             "editslide/:id": "editSlide"
         },
         home: function () {
             $("#container").html(new HomeView().render().el);
         },
-        newPresentation: function () {
-            $("#container").html(new PresentationView({ model: new Presentation() }).render().el);
+        loadPresentation: function () {
+            var presentation = new Presentation();
+            var presentationView = new PresentationView({ collection: presentation});
+            presentation.fetch({
+                success: function () {
+                    $("#container").html(presentationView.render().el);
+                }
+            });
         },
         editSlide: function (id) {
             var slide = new Slide({ id: id});

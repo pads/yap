@@ -16,25 +16,19 @@ define([
             "click #removeslide": "removeSlide"
         },
         render: function () {
-            this.$el.html(this.template({ slides: this.model.models }));
+            this.$el.html(this.template({ slides: this.collection.toJSON() }));
             return this;
         },
         addSlide: function () {
-            var slide = new Slide();
-            var view = this;
-            slide.save({}, {
-                success: function () {
-                    view.model.add(slide);
-                    view.render();
-                }
-            });
+            this.collection.create({});
+            this.render();
         },
         editSlide: function (event) {
             window.location.href = "#editslide/" + $(event.currentTarget).parent().attr("id");
         },
         removeSlide: function (event) {
             var slideId = $(event.currentTarget).parent().attr("id");
-            this.model.remove(slideId);
+            this.collection.remove(slideId);
             this.render();
         }
     });

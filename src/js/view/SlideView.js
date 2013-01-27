@@ -1,4 +1,10 @@
-define(["backbone", "underscore", "text!/src/html/templates/slide.html"], function (Backbone, _, slideTemplate) {
+define([
+    "backbone",
+    "underscore",
+    "jquery",
+    "text!/src/html/templates/slide.html"
+],
+    function (Backbone, _, $, slideTemplate) {
 
     return Backbone.View.extend({
         id: "slide",
@@ -23,7 +29,13 @@ define(["backbone", "underscore", "text!/src/html/templates/slide.html"], functi
 
         },
         save: function () {
+            var title = $("#title").val();
+            var content = $("#content").val();
+            this.model.save({ title: title, content: content}, {
+                success: function () {
 
+                }
+            });
         }
     });
 });
