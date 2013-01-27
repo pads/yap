@@ -5,6 +5,8 @@ define([
     "text!/src/html/templates/presentation.html"
 ], function (Backbone, _, $, presentationTemplate) {
 
+    var slideCounter = 1;
+
     return Backbone.View.extend({
         id: "presentation",
         tagName: "section",
@@ -19,7 +21,8 @@ define([
             return this;
         },
         addSlide: function () {
-            this.collection.create({});
+            this.collection.create({ title: "Slide " + slideCounter });
+            slideCounter++;
             this.render();
         },
         editSlide: function (event) {
