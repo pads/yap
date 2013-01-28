@@ -114,7 +114,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-replace");
     grunt.loadNpmTasks("grunt-dependencygraph");
 
-    grunt.registerTask("build", "Build the application for deployment", function(env) {
+    grunt.registerTask("build", "Build the application for deployment", function (env) {
         if (env === "production") {
             grunt.task.run("clean default requirejs replace:production");
         } else {
