@@ -79,15 +79,46 @@ module.exports = function (grunt) {
             targetPath: "src/js",
             outputPath: "build/dependency_graph",
             format: "amd"
+        },
+        replace: {
+            dev: {
+                options: {
+                    variables: {
+                        "app": "/src/js/App.js"
+                    }
+                },
+                files: {
+                    "build/": ["src/html/yap.html"]
+                }
+            },
+            production: {
+                options: {
+                    variables: {
+                        "app": "/build/App.js"
+                    }
+                },
+                files: {
+                    "build/": ["src/html/yap.html"]
+                }
+            }
         }
     });
+
+    grunt.registerTask("default", "csslint lint jasmine");
 
     grunt.loadNpmTasks("grunt-volo");
     grunt.loadNpmTasks("grunt-jasmine-runner");
     grunt.loadNpmTasks("grunt-css");
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-requirejs");
+    grunt.loadNpmTasks("grunt-replace");
     grunt.loadNpmTasks("grunt-dependencygraph");
 
-    grunt.registerTask("default", "lint jasmine");
+    grunt.registerTask("build", "Build the application for deployment", function(env) {
+        if (env === "production") {
+            grunt.task.run("clean default requirejs replace:production");
+        } else {
+            grunt.task.run("clean default replace:dev");
+        }
+    });
 };

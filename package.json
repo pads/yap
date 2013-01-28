@@ -25,7 +25,8 @@
     "grunt-css": "0.3.x",
     "grunt-contrib-clean": "0.3.1",
     "grunt-contrib-requirejs": "0.3.4",
-    "grunt-dependencygraph": "0.1.2"
+    "grunt-dependencygraph": "0.1.2",
+    "grunt-replace": "~0.3.2"
   },
   "volo": {
     "baseDir": "src/js/lib",
