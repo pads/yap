@@ -12,6 +12,9 @@ module.exports = function (grunt) {
             ],
             junit: {
                 output: "junit/"
+            },
+            phantomjs: {
+                "proxy-type": "none"
             }
         },
         lint: {
