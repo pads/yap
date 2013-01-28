@@ -56,12 +56,31 @@ module.exports = function (grunt) {
         watch: {
             files: ["<config:csslint.lint.src>", "<config:lint.files>"],
             tasks: ["csslint", "lint", "jasmine"]
+        },
+        clean: ["build"],
+        requirejs: {
+            compile: {
+                options: {
+                    name: "App",
+                    baseUrl: "src/js",
+                    mainConfigFile: "src/js/App.js",
+                    out: "build/App.js"
+                }
+            }
+        },
+        dependencygraph: {
+            targetPath: "src/js",
+            outputPath: "build/dependency_graph",
+            format: "amd"
         }
     });
 
     grunt.loadNpmTasks("grunt-volo");
     grunt.loadNpmTasks("grunt-jasmine-runner");
     grunt.loadNpmTasks("grunt-css");
+    grunt.loadNpmTasks("grunt-contrib-clean");
+    grunt.loadNpmTasks("grunt-contrib-requirejs");
+    grunt.loadNpmTasks("grunt-dependencygraph");
 
     grunt.registerTask("default", "lint jasmine");
 };

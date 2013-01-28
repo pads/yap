@@ -1,4 +1,4 @@
-define(["backbone", "underscore", "text!/src/html/templates/home.html"], function (Backbone, _, homeTemplate) {
+define(["backbone", "underscore", "text!homeTemplate.html"], function (Backbone, _, homeTemplate) {
 
     return Backbone.View.extend({
         className: "home",

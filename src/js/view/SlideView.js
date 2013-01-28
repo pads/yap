@@ -2,7 +2,7 @@ define([
     "backbone",
     "underscore",
     "jquery",
-    "text!/src/html/templates/slide.html"
+    "text!slideTemplate.html"
 ],
     function (Backbone, _, $, slideTemplate) {
 

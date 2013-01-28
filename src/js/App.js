@@ -5,24 +5,21 @@ require.config({
         jquery: "lib/jquery",
         underscore: "lib/underscore",
         backbone: "lib/backbone",
-        backboneLocalStorage: "lib/Backbone.localStorage"
+        backboneLocalStorage: "lib/Backbone.localStorage",
+        homeTemplate: "../html/templates/home",
+        presentationTemplate: "../html/templates/presentation",
+        slideTemplate: "../html/templates/slide",
+        slideShowTemplate: "../html/templates/slideshow"
     }
 });
 
-define(
+require(
     [
         "backbone",
         "AppRouter"
     ],
     function (Backbone, AppRouter) {
-
-        function App() {
-            this.initialise = function () {
-                new AppRouter();
-                Backbone.history.start();
-            };
-        }
-        new App().initialise();
-        return App;
+        new AppRouter();
+        Backbone.history.start();
     }
 );

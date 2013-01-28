@@ -2,7 +2,7 @@ define([
     "backbone",
     "underscore",
     "jquery",
-    "text!/src/html/templates/slideshow.html"
+    "text!slideShowTemplate.html"
 ], function (Backbone, _, $, slideShowView) {
 
     var KEY_ENTER = 13;

@@ -2,7 +2,7 @@ define([
     "backbone",
     "underscore",
     "jquery",
-    "text!/src/html/templates/presentation.html"
+    "text!presentationTemplate.html"
 ], function (Backbone, _, $, presentationTemplate) {
 
     var slideCounter = 1;
