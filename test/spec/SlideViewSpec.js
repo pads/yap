@@ -1,4 +1,4 @@
-define(["/src/js/view/SlideView.js"], function (SlideView) {
+define(["view/SlideView"], function (SlideView) {
 
     var slideView;
 
@@ -8,9 +8,10 @@ define(["/src/js/view/SlideView.js"], function (SlideView) {
 
     describe("Slide view", function () {
 
-        it("it should render correctly", function () {
-
+        it("it should be defined", function () {
+            expect(slideView).toBeDefined();
         });
+
 
     });
 });

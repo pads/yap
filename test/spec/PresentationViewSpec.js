@@ -8,9 +8,10 @@ define(["/src/js/view/PresentationView.js"], function (PresentationView) {
 
     describe("Presentation view", function () {
 
-        it("it should render correctly", function () {
-
+        it("it should be defined", function () {
+            expect(presentationView).toBeDefined();
         });
+
 
     });
 });

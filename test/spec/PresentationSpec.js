@@ -1,4 +1,4 @@
-define(["/src/js/collection/Presentation.js"], function (Presentation) {
+define(["collection/Presentation"], function (Presentation) {
 
     var presentation;
 
@@ -8,8 +8,8 @@ define(["/src/js/collection/Presentation.js"], function (Presentation) {
 
     describe("Presentation", function () {
 
-        it("should have Slide as a model", function () {
-
+        it("it should be defined", function () {
+            expect(presentation).toBeDefined();
         });
 
     });

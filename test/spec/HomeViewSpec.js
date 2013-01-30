@@ -1,4 +1,4 @@
-define(["/src/js/view/HomeView.js"], function (HomeView) {
+define(["view/HomeView"], function (HomeView) {
 
     var homeView;
 
@@ -8,8 +8,8 @@ define(["/src/js/view/HomeView.js"], function (HomeView) {
 
     describe("Home view", function () {
 
-        it("it should render correctly", function () {
-
+        it("it should be defined", function () {
+            expect(homeView).toBeDefined();
         });
 
     });
