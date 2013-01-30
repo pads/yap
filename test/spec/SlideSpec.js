@@ -1,35 +1,43 @@
-define(["/src/js/model/Slide.js"], function (Slide) {
+define(["squire", "backbone"], function (Squire, Backbone) {
 
-    var slide;
+    var injector = new Squire();
+    var backboneModelSpy = sinon.spy(Backbone, "Model");
+    var backboneExtendSpy = sinon.spy(backboneModelSpy, "extend");
 
-    beforeEach(function () {
-        slide = new Slide();
-    });
+    injector.mock(Backbone).require(["model/Slide"], function(Slide) {
 
-    describe("Slide", function () {
+        var slide;
 
-        it("should have a title string field", function () {
-            expect(slide.get("title")).toBe("");
+        beforeEach(function () {
+            expect(backboneExtendSpy).toHaveBeenCalledOnce();
+            slide = new Slide();
         });
 
-        it("should have the correct default title placeholder", function () {
-            expect(slide.get("titleplaceholder")).toBe("Enter title here");
-        });
+        describe("Slide", function () {
 
-        it("should have a contents string field", function () {
-            expect(slide.get("content")).toBe("");
-        });
+            it("should have a title string field", function () {
+                expect(slide.get("title")).toBe("");
+            });
 
-        it("should have the correct default contents placeholder", function () {
-            expect(slide.get("contentplaceholder")).toBe("Enter content here");
-        });
+            it("should have the correct default title placeholder", function () {
+                expect(slide.get("titleplaceholder")).toBe("Enter title here");
+            });
 
-        it("should have a placeholder to the next slide", function () {
-            expect(slide.get("next")).toEqual({ title: "" });
-        });
+            it("should have a contents string field", function () {
+                expect(slide.get("content")).toBe("");
+            });
 
-        it("should have a placeholder to the previous slide", function () {
-            expect(slide.get("previous")).toEqual({ title: "" });
+            it("should have the correct default contents placeholder", function () {
+                expect(slide.get("contentplaceholder")).toBe("Enter content here");
+            });
+
+            it("should have a placeholder to the next slide", function () {
+                expect(slide.get("next")).toEqual({ title: "" });
+            });
+
+            it("should have a placeholder to the previous slide", function () {
+                expect(slide.get("previous")).toEqual({ title: "" });
+            });
         });
     });
 

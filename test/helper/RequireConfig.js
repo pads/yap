@@ -1,6 +1,7 @@
 require.config({
     baseUrl: "/src/js/",
     paths: {
+        squire: "../../test/helper/Squire",
         text: "lib/text",
         jquery: "lib/jquery",
         underscore: "lib/underscore",
