@@ -32,4 +32,5 @@ define(["/src/js/model/Slide.js"], function (Slide) {
             expect(slide.get("previous")).toEqual({ title: "" });
         });
     });
+
 });

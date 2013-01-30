@@ -4,11 +4,12 @@ module.exports = function (grunt) {
     grunt.initConfig({
         jasmine: {
             amd: true,
-            specs: "test/*Spec.js",
+            specs: "test/spec/*.js",
             template: "test/CustomRunner.tmpl",
             helpers: [
                 "src/js/lib/require.js",
-                "test/RequireConfig.js"
+                "test/helper/RequireConfig.js",
+                "test/helper/sinon-1.5.2.js"
             ],
             junit: {
                 output: "junit/"
