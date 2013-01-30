@@ -9,7 +9,8 @@ module.exports = function (grunt) {
             helpers: [
                 "src/js/lib/require.js",
                 "test/helper/RequireConfig.js",
-                "test/helper/sinon-1.5.2.js"
+                "test/helper/sinon-1.5.2.js",
+                "test/helper/jasmine-sinon.js"
             ],
             junit: {
                 output: "junit/"
