@@ -59,7 +59,7 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: ["<config:csslint.lint.src>", "<config:lint.files>"],
+            files: ["<config:csslint.lint.src>", "<config:lint.files>", "<config:jasmine.specs>"],
             tasks: ["csslint", "lint", "jasmine"]
         },
         clean: ["build"],
