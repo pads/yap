@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>What I Learned from the Tooling Tutorials</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+        <link rel="stylesheet" href="reveal-js/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal-js/css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal-js/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write('<link rel="stylesheet" href="reveal-js/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal-js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+            <section>
+                <h1>What I Learned from the Tooling Tutorials</h1>
+
+                <div>Building, modularising and debugging JavaScript</div>
+            </section>
+            <section>
+                <h2>Your Host</h2>
+
+                <div>Ben Paddock (@_pads)</div>
+                <div>Software developer</div>
+                <div>BT Osmosoft</div>
+            </section>
+            <section>
+                <h2>Taken From</h2>
+
+                <div>The Tooling Tutorials</div>
+                <div>
+                    <br>
+                </div>
+                <div>http://2012.full-frontal.org/workshop/tooling<br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>Remy Sharp (JS Bin, Full Frontal etc...)</div>
+                <div>Rebecca Murphey (jQuery)</div>
+                <div>Jake Archibald - (Google, Lanyrd)</div>
+            </section>
+            <section>
+                <h2 style="text-align: center;">We'll Cover...</h2>
+
+                <div style="text-align: left;">
+                    <div style="text-align: center;">
+                        <ul>
+                            <li>
+                            <span style="letter-spacing: -0.02em;text-align: center;">Grunt - building projects<br>
+                                <br>
+                            </span>
+                            </li>
+                            <li>
+                            <span style="letter-spacing: -0.02em;text-align: center;">RequireJS - modular JavaScript<br>
+                            </span>
+                                <br>
+                            </li>
+                            <li>
+                                <span style="letter-spacing: -0.02em;text-align: center;">A bit of debugging in Chrome</span>
+                                <br>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <section>
+                    <h2>Grunt</h2>
+
+                    <div style="text-align: center;">
+                        <ul>
+                            <li>Task automation for front-end projects<br>
+                                <br>
+                            </li>
+                            <li>Allows you to choose the tools you need&nbsp;<br>
+                            <span style="letter-spacing: -0.02em;">- Or write your own<br>
+                                <br>
+                            </span>
+                            </li>
+                            <li>Based on Node and works with NPM<br>
+                                <br>
+                            </li>
+                            <li>Going through a heavy rewrite (0.3 -&gt; 0.4)<br>
+                                <span style="letter-spacing: -0.02em;">- We'll be looking at 0.3</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Getting Started</h2>
+
+                    <div>Given a valid Node installation</div>
+                    <pre><code>npm init</code></pre>
+                <pre><code>name: (my-amazing-app)
+    version: (1.0.0)
+    license: (BSD)
+    About to write to /home/user/my-amazing-app/package.json:
+            </code></pre>
+                    <pre><code>npm install -g grunt</code></pre>
+                    <pre><code>grunt init:gruntfile</code></pre>
+            <pre><code>Please answer the following:
+    [?] Is the DOM involved in ANY way? (Y/n)
+    [?] Will files be concatenated or minified? (Y/n)
+    [?] Will you have a package.json file? (Y/n)
+    [?] Do you need to make any changes to the above before continuing? (y/N)
+        </code></pre>
+                </section>
+                <section>
+                    <h2>Grunt Built-in Tasks</h2>
+
+                    <div style="font-size: 36.0px;font-variant: normal;line-height: 43.1875px;letter-spacing: normal;text-transform: none;">
+                        <ul>
+                            <li style="font-style: normal;">init: bootstrapping<br>
+                            </li>
+                            <li style="font-style: normal;">lint: code quality checks</li>
+                            <li style="font-style: normal;">concat: combine files into one</li>
+                            <li style="font-style: normal;">min: Minify source code</li>
+                            <li style="font-style: normal;">qunit: Run tests</li>
+                            <li>server: Host your files<br>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Shall We Look At Some Code?</h2>
+                    <pre style="text-align: center;">cut to demo</code></pre>
+                </section>
+                <section>
+                    <h2>What's changing in 0.4</h2>
+
+                    <div>
+                        <ul>
+                            <li>https://github.com/gruntjs/grunt/wiki/Upgrading-from-0.3-to-0.4<br>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>RequireJS</h2>
+
+                    <div>
+                        <ul>
+                            <li>A way to write and consume modular JavaScript<br>
+                                <br>
+                            </li>
+                            <li>JavaScript's answer to "import"<br>-&nbsp;dependency&nbsp;management but not obtainment<br>
+                                <br>
+                            </li>
+                            <li>Helps reduce global pollution (window.myThing = ...)<br>
+                                <br>
+                            </li>
+                            <li>Uses an AMD (Asynchronous Module Definition)&nbsp;API<br>
+                                <br>
+                            </li>
+                            <li>Optimised down to one or more files (configurable)<br>
+                                <br>
+                                <br>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>But Wait, There's More!</h2>
+
+                    <div>
+                        <ul>
+                            <li>You only need to manage one script tag<br>- No more guessing required order<br>
+                                <br>
+                            </li>
+                            <li>Modules are&nbsp;swappable&nbsp;via configuration<br>- Comparable to dependency
+                                injection<br>- But testing is harder than it should be<br>
+                                <br>
+                            </li>
+                            <li>Plugin architecture<br>- Load other file types and treat them as dependencies<br>
+                                <br>
+                            </li>
+                            <li>
+                                <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">Coerce non-AMD files to behave like them (shim)</span>
+                                <br>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>AMD You Say?</h2>
+
+                    <div>
+                        <ul>
+                            <li>Async loading of modules and their dependencies<br>- Sync in a browser = nasty<br>
+                                <br>
+                            </li>
+                            <li>Modules can consume dependencies, provide them <br>(or both)<br>
+                            </li>
+                        </ul>
+                <pre><code>require(["my-handy-dep", "the-ultimate-dep"], function(dep1, dep2){
+        alert("I don't return anything, HA!");
+}</code></pre>
+                <pre><code>define("mega-module", function() { return "I'm amazing, USE ME" }</code></pre>
+                <pre><code>define("module-with-depp", ["johnny"], function(JohnnyDepp) {
+    return "I need" + JohnnyDepp + " in my life"
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Pretty Dependency Graph</h2>
+
+                    <div>
+                        <img src="http://i.imgur.com/AMsQKae.png">
+                        <br>
+                    </div>
+                </section>
+                <section>
+                    <h2>Optimising</h2>
+
+                    <div>
+                        <ul>
+                            <li>Each module is a file that requires loading<br>
+                                <br>
+                            </li>
+                            <li>Multiple file loading != optimal network<br>
+                                <br>
+                            </li>
+                            <li>Bundled r.js combines files into one<br>- or a few to take advantage of parallell
+                                loading<br>
+                                <br>
+                            </li>
+                            <li>Choose an optimisation engine to minify (or none)<br>
+                                <br>
+                            </li>
+                            <li>You can even create source maps<br>- We'll see this later!<br>
+                                <br>
+                                <br>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>This Requires a Demo</h2>
+                    <pre><code>to the command line...</code></pre>
+                </section>
+                <section>
+                    <h2>The Future of Modules</h2>
+
+                    <div>There are other options already out there:</div>
+                    <div>Common JS</div>
+                    <div>Angular JS</div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>ECMAScript Harmony is coming...</div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>http://wiki.ecmascript.org/doku.php?id=harmony:modules<br>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Debugging</h2>
+
+                    <div>
+                        <ul>
+                            <li style="text-align: left;">
+                        <span style="text-align: center;">
+                            <span style="letter-spacing: -0.02em;">For Chrome (sorry)</span>
+                            <br>
+                            <div style="text-align: left;">
+                                <br>
+                            </div>
+                        </span>
+                            </li>
+                            <li style="text-align: left;">
+                                <span style="text-align: center;letter-spacing: -0.02em;">Source Maps</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Source Maps</h2>
+
+                    <div>
+                        <ul>
+                            <li>How do you debug &nbsp;a single minified code?</li>
+                            <li>Or refer back to your CoffeeScript or TypeScript?<br>
+                                <br>
+                            </li>
+                            <li>Create a map at compile-time<br>
+                                <br>
+                            </li>
+                            <li>Only serve the optimised file to users in a script tag<br>
+                                <br>
+                            </li>
+                            <li>Host the development files and debug them<br>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Let's Go On a Journey</h2>
+                    <pre><code>Inspect the web</code></pre>
+                </section>
+            </section>
+            <section>
+                <h2>Want to know more?</h2>
+
+                <div>https://github.com/pads/yap<br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>http://gruntjs.com</div>
+                <div>
+                    <br>
+                </div>
+                <div>http://requirejs.org/<br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>https://developers.google.com/chrome-developer-tools/<br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>http://leftlogic.com/training<br>
+                </div>
+            </section>
+            <section>
+                <h2>Thank you</h2>
+
+                <div>Questions?</div>
+            </section>
+            </div>
+
+        </div>
+
+        <script src="reveal-js/lib/js/head.min.js"></script>
+        <script src="reveal-js/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls:true,
+                progress:true,
+                history:true,
+                center:false,
+                overview:true,
+
+                theme:Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition:Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies:[
+                    { src:'reveal-js/lib/js/classList.js', condition:function () {
+                        return !document.body.classList;
+                    } },
+                    { src:'reveal-js/plugin/markdown/showdown.js', condition:function () {
+                        return !!document.querySelector('[data-markdown]');
+                    } },
+                    { src:'reveal-js/plugin/markdown/markdown.js', condition:function () {
+                        return !!document.querySelector('[data-markdown]');
+                    } },
+                    { src:'reveal-js/plugin/highlight/highlight.js', async:true, callback:function () {
+                        hljs.initHighlightingOnLoad();
+                    } },
+                    { src:'reveal-js/plugin/zoom-js/zoom.js', async:true, condition:function () {
+                        return !!document.body.classList;
+                    } },
+                    { src:'reveal-js/plugin/notes/notes.js', async:true, condition:function () {
+                        return !!document.body.classList;
+                    } },
+                    { src:'reveal-js/plugin/remotes/remotes.js', async:true, condition:function () {
+                        return !!document.body.classList;
+                    } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
