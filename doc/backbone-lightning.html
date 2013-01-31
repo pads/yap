@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>What I Learned from the Tooling Tutorials</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+        <link rel="stylesheet" href="reveal-js/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal-js/css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal-js/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write('<link rel="stylesheet" href="reveal-js/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal-js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+            <section>
+                <h2>
+                    <font face="Lato">backbone js</font>
+                </h2>
+                <p>
+                    <img src="http://erickrdch.com/_/wp-content/uploads/2012/03/backbone-300x300.png">
+                    <br>
+                </p>
+                <h6>
+                    <span style="text-align: right;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>&nbsp;</h6>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+
+
+
+
+
+
+
+            </section>
+            <section>
+                <h2>A Lightning introduction...</h2>
+                <div>
+                    <br>
+                </div>
+                <div>Who wrote it</div>
+                <div>What it is</div>
+                <div>
+                    <strike>When</strike>
+                </div>
+                <div>Why it was written</div>
+                <div>How to use it</div>
+                <div>Where to find out more</div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+
+
+
+
+            </section>
+            <section>
+                <h2>Who</h2>
+                <div>
+                    <br>
+                </div>
+                <div>Open source component of DocumentCloud</div>
+                <div>(They also wrote Underscore)</div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>What</h2>
+                <div>
+                    <br>
+                </div>
+                <div>A JavaScript MV* Library</div>
+                <div>
+                    <br>
+                </div>
+                <div>Pattern is up for debate but it certainly provides models and views</div>
+                <div>
+                    <br>
+                </div>
+                <div>Collections, events, routing and data syncing is also provided</div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>Why</h2>
+                <div>
+                    <br>
+                </div>
+                <div>Give structure to web applications</div>
+                <div>
+                    <br>
+                </div>
+                <div>Not a framework -&nbsp;loosely opinionated set of classes with useful methods you extend to fit your needs</div>
+                <div>
+                    <br>
+                </div>
+                <div>More than one way to do things&nbsp;</div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+            <section>
+                <h2>HOW</h2>
+                <div>
+                    <br>
+                </div>
+                <div>We will quickly look at creating and using:</div>
+                <div>
+                    <br>
+                </div>
+                <div>Models</div>
+                <div>Collections</div>
+                <div>Views</div>
+                <div>Events</div>
+                <div>Routing</div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>How</h2>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">Extend a Backbone base class then instantiate when needed</span>
+                    <br>
+                </div>
+                <div>
+                                <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">
+                                    <br>
+                                </span>
+                </div>
+                <div>
+                    <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">Each class has some built-in methods that can be used as-is or overwritten</span>
+                </div>
+                <div>
+                                <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">
+                                    <br>
+                                </span>
+                </div>
+                <div>
+                                <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">
+                                    <br>
+                                </span>
+                </div>
+                <div>
+                                <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">
+                                    <br>
+                                </span>
+                </div>
+                <div>
+                                <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">
+                                    <br>
+                                </span>
+                </div>
+                <div>
+                                <pre style="font-style: normal;font-variant: normal;width: 754.1875px;text-align: right;"> <font face="League Gothic">BT OSMOSOFT 2013</font>
+                            </pre>
+                </div>
+            </section>
+            <section>
+                <h2>Models<br>
+                </h2>
+                        <pre>var Tiddler = Backbone.Model.extend({
+        urlRoot: '/bags/tiddlyspace/tiddlers',
+        idAttribute: 'title',
+        defaults: {
+            'title': 'New Tiddler',
+            'text': '',
+            'tags': [],
+            'fields': {}
+        }
+    });<br>
+                    </pre>
+                <pre>var tiddler = new Tiddler({ title: "Backbone JS" }):</pre>
+                    <pre>tiddler.fetch({
+    success: function () {
+        //Do something with the loaded model
+    }
+});
+
+</pre>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>Collections</h2>
+                    <pre>var Bag = Backbone.Collection.extend({
+    model: Tiddler,
+    url: '/bags/tiddlyspace/tiddlers'
+});<br>
+                </pre>
+                <pre>var bag = new Bag();</pre>
+                <pre>bag.fetch({
+    success: function () {
+        //Do something with collection of models
+    }
+});</pre>
+                <pre>bag.get("Backbone JS"); //Returns the "Backbone JS" model</pre>
+                <pre>bag.create({ title: "Require JS" }); //Create &amp; add new model
+</pre>
+                <p>
+                    <br>
+                    <br>
+                </p>
+            <pre style="font-style: normal;font-variant: normal;width: 754.1875px;text-align: right;">
+                <font face="League Gothic">BT OSMOSOFT 2013</font>
+            </pre>
+            </section>
+            <section>
+                <h2>Views</h2>
+            <pre>var ListItemView = Backbone.View.extend({
+    tagName: 'li',
+    template: _.template(listItemTemplate)
+    render: function () {
+        $(this.el).html(this.template(this.model.toJSON()));
+        return this;
+    }
+});<br>
+        </pre>
+                <pre>var listItemView = new ListItemView({ model: tiddler });</pre>
+        <pre>listItem.view.render().el //Returns the list item DOM snippet
+
+</pre>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>What Defines a View?</h2>
+                <div>A page?</div>
+                <div>A section of the page?</div>
+                <div>A single element?</div>
+        <pre>var TiddlersListView = Backbone.View.extend({
+  tagName: 'ul',
+  render: function () {
+    _.each(this.collection.models, function (tiddler) {
+      $(this.el).append(
+        new ListItemView({ model: tiddler }).render().el
+      );
+    }, this);
+    return this;
+    }
+});
+</pre>
+        <pre>var listView = new TiddlersListView({ collection: bag });<br>
+        </pre>
+        <pre style="font-style: normal;font-variant: normal;width: 754.1875px;text-align: right;"> <font face="League Gothic">BT OSMOSOFT 2013</font>
+    </pre>
+            </section>
+            <section>
+                <h2>Events</h2>
+    <pre>var TiddlerEditView = Backbone.View.extend({
+
+        events: {
+            'click .submit-button': 'saveTiddler'
+        },
+
+        saveTiddler: function () {
+            this.model.set({
+                title: $('#tiddler-title').val(),
+                text: $('#tiddler-content').val(),
+                tags: $('#tiddler-tags').val().split(',')
+            });
+
+            this.model.save();
+            return false;
+        },
+    });
+
+
+</pre>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>Routing</h2>
+                <div>Used for application state and navigation</div>
+                <div>Most examples use views for controller logic</div>
+                <div>
+                    <br>
+                </div>
+    <pre>var AppRouter = Backbone.Router.extend({
+    routes:{
+        'home': 'home',
+        'tiddler/:title': 'getTiddler',
+        'tiddlers': 'getTiddlers',
+        'newTiddler': 'newTiddler'
+    },
+    getTiddler: function (title) {
+        //Load tiddler by title
+        //Create view and render
+    }</pre>
+                <pre>app/#tiddler/NewTiddler -&gt; getTiddler("NewTiddler")</pre>
+                <div>
+<pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013 </font>
+</pre>
+                </div>
+            </section>
+            </section>
+            <section>
+                <h2>Where</h2>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <div style="">http://backbonejs.org<br>
+                    </div>
+                    <div style="">
+                        <br>
+                    </div>
+                    <div style="">http://addyosmani.github.com/backbone-fundamentals</div>
+                    <div style="">
+                        <br>
+                    </div>
+                    <div style="">https://github.com/pads/TiddlyBone<br>
+                    </div>
+                    <div style="">
+                        <br>
+                    </div>
+                    <div style="">https://github.com/pads/yap</div>
+                    <div style="">
+                        <br>
+                    </div>
+                </div>
+                <div>
+    <pre style="text-align: right;">    <font face="League Gothic">BT OSMOSOFT 2013</font>
+</pre>
+                </div>
+            </section>
+            <section>
+                <h2>Fin</h2>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                </div>
+                <div>
+        <pre style="font-style: normal;font-variant: normal;width: 754.1875px;text-align: right;">
+            <font face="League Gothic">BT OSMOSOFT 2013</font>
+        </pre>
+                </div>
+            </section>
+            </div>
+
+
+        </div>
+
+        <script src="reveal-js/lib/js/head.min.js"></script>
+        <script src="reveal-js/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls:true,
+                progress:true,
+                history:true,
+                center:false,
+                overview:true,
+
+                theme:Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition:Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies:[
+                    { src:'reveal-js/lib/js/classList.js', condition:function () {
+                        return !document.body.classList;
+                    } },
+                    { src:'reveal-js/plugin/markdown/showdown.js', condition:function () {
+                        return !!document.querySelector('[data-markdown]');
+                    } },
+                    { src:'reveal-js/plugin/markdown/markdown.js', condition:function () {
+                        return !!document.querySelector('[data-markdown]');
+                    } },
+                    { src:'reveal-js/plugin/highlight/highlight.js', async:true, callback:function () {
+                        hljs.initHighlightingOnLoad();
+                    } },
+                    { src:'reveal-js/plugin/zoom-js/zoom.js', async:true, condition:function () {
+                        return !!document.body.classList;
+                    } },
+                    { src:'reveal-js/plugin/notes/notes.js', async:true, condition:function () {
+                        return !!document.body.classList;
+                    } },
+                    { src:'reveal-js/plugin/remotes/remotes.js', async:true, condition:function () {
+                        return !!document.body.classList;
+                    } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
