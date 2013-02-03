@@ -59,7 +59,7 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: ["<config:csslint.lint.src>", "<config:lint.files>", "<config:jasmine.specs>"],
+            files: ["src/html/**/*.html", "<config:csslint.lint.src>", "<config:lint.files>", "<config:jasmine.specs>"],
             tasks: ["csslint", "lint", "jasmine", "replace:dev"]
         },
         clean: ["build"],
@@ -86,7 +86,8 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     variables: {
-                        "app": "/src/js/App.js"
+                        "app": "/src/js/App.js",
+                        "debug": "<script src='http://localhost:8080/target/target-script-min.js#anonymous'></script>"
                     }
                 },
                 files: {
@@ -96,7 +97,8 @@ module.exports = function (grunt) {
             production: {
                 options: {
                     variables: {
-                        "app": "/build/App.js"
+                        "app": "/build/App.js",
+                        "debug": "<!-- Debugging script would go here -->"
                     }
                 },
                 files: {
